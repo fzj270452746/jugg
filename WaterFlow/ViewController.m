@@ -33,6 +33,7 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"plist"];
     NSArray *data = [[NSArray alloc] initWithContentsOfFile:path];
     
+    //json数据转模型
     for (NSDictionary *dic in data) {
         ShopModel *shopModel = [ShopModel new];
         shopModel = [ShopModel mj_objectWithKeyValues:dic];
@@ -44,6 +45,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.title = @"瀑布流";
     [self setupCollectionView];
     [self setupRefreshing];
 }
